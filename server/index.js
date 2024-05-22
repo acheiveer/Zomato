@@ -5,7 +5,7 @@ dotenv.config();
 //Databse Connection
 import connectDB from "./database/connection"
 
-import Auth from "./api/food"
+import Auth from "./api/auth"
 
 const zomato = express();
 zomato.use(express.json());
