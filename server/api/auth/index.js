@@ -6,8 +6,12 @@ const Router = express.Router();
 
 Router.post("/signup",async (req,res)=>{
     try {
-        await UserModel.findByEmailAndPhone(req.body.credentials);
-        const newUser = await UserModel.create(req.body.credentials);
+        const {credentials} = req.body;
+        if (!credentials) {
+            throw new Error("No credentials provided");
+        }
+        await UserModel.findByEmailAndPhone(credentials);
+        const newUser = await UserModel.create(credentials);
         const token = newUser.generateJwtToken();
         return res.status(200).json({token, status:"Success"})
     } catch (error) {
@@ -17,9 +21,13 @@ Router.post("/signup",async (req,res)=>{
 
 Router.post("/signin",async (req,res)=>{
     try {
-        const user = await UserModel.findByEmailAndPassword(req.body.credentials);
+        const {credentials} = req.body;
+        if (!credentials) {
+            throw new Error("No credentials provided");
+        }
+        const user = await UserModel.findByEmailAndPassword(credentials);
         const token = user.generateJwtToken();
-        res.send(200).json({token, status:"Sucecss"})
+        res.status(200).json({token, status:"Sucecss"})
     } catch (error) {
         res.status(500).json({error: error.message})
     }
