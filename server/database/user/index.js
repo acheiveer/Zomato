@@ -21,7 +21,7 @@ UserSchema.methods.generateJwtToken = function () {
 };
 
 // helper functions
-UserSchema.statics.findByEmailAndPhone = async () => {
+UserSchema.statics.findByEmailAndPhone = async ({email,phoneNumber}) => {
   const checkUserByEmail = await UserModel.findOne({email});
   const checkUserByPhone = await UserModel.findOne({phoneNumber})
 
@@ -31,7 +31,7 @@ UserSchema.statics.findByEmailAndPhone = async () => {
   return false;
 };
 
-UserSchema.statics.findByEmailAndPassword = async () => {
+UserSchema.statics.findByEmailAndPassword = async ({email,password}) => {
   const user = await UserModel.findOne({email});
   if(!user) throw new Error("User doesn't exist.....")
 
@@ -42,24 +42,23 @@ UserSchema.statics.findByEmailAndPassword = async () => {
   return user;
 };
 
-UserSchema.pre("save",(next)=>{
+// Pre-save hook to hash the password
+UserSchema.pre("save", async function (next) {
   const user = this;
-   // password is modified
-   if (!user.isModified("password")) return next();
+  // If password is not modified, move to next middleware
+  if (!user.isModified("password")) return next();
 
-   // generate bcrypt salt
-   bcrypt.genSalt(8, (error, salt) => {
-     if (error) return next(error);
- 
-     // hash the password
-     bcrypt.hash(user.password, salt, (error, hash) => {
-       if (error) return next(error);
- 
-       // assigning hashed password
-       user.password = hash;
-       return next();
-     });
-   });
-})
+  try {
+    // Generate bcrypt salt
+    const salt = await bcrypt.genSalt(8);
+    // Hash the password
+    const hash = await bcrypt.hash(user.password, salt);
+    // Assign hashed password
+    user.password = hash;
+    next();
+  } catch (error) {
+    next(error);
+  }
+});
 
 export const UserModel = mongoose.model("users", UserSchema);

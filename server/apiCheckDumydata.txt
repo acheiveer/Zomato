@@ -1,0 +1,33 @@
+for creating food API
+{
+  "foodData": {
+  "name": "Margherita Pizza",
+  "description": "Classic Italian pizza with tomato sauce, mozzarella cheese, and fresh basil.",
+  "isVeg": true,
+  "isContainsEgg": false,
+  "category": "Italian",
+  "price": 200,
+  "restaurant": "615d59c3ab597b63d4a70c71" // Dummy restaurant ID
+  }
+}
+********************************************************************************************************************************
+for creating user signup/signin API
+{
+  "credentials": {
+    "fullName": "John Doe",
+    "email": "john.doe@example.com",
+    "password": "john.doe@example.com",
+    "address": [
+      {
+        "detail": "123 Main St, Springfield, IL",
+        "for": "home"
+      },
+      {
+        "detail": "456 Elm St, Springfield, IL",
+        "for": "work"
+      }
+    ],
+    "phoneNumber": [1234567890, 9876543210]
+  }
+}
+*********************************************************************************************************************************
