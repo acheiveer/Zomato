@@ -34,3 +34,8 @@
 - food, image, menu,order, restaurant, review, user
 ### install bcryptjs jsonwebtoken
 - npm install bcryptjs jsonwebtoken
+- setup salting and hasing in user schema
+### API
+- server => api
+### Auth API
+- user singn-up and sign-in
