@@ -17,12 +17,13 @@ zomato.get("/",(req,res)=>{
 const PORT=4000;
 
 zomato.listen(PORT,()=>{
-    connectDB().then(()=>{
-        console.log(`Server is running on ${PORT} and DB connected`)
-    })
-    .catch((error)=>{
-        console.log(`Server is running but DB connection failed`)
-        console.log(error);
-    })
+    // connectDB().then(()=>{
+    //     console.log(`Server is running on ${PORT} and DB connected`)
+    // })
+    // .catch((error)=>{
+    //     console.log(`Server is running but DB connection failed....`)
+    //     console.log(error);
+    // })
+    console.log(`Server is running on ${PORT}`)
    
 })
