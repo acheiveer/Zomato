@@ -14,6 +14,7 @@ import Auth from "./api/auth"
 import Food from "./api/food"
 import Restaurant from "./api/restaurant"
 import User from "./api/user"
+import Menu from "./api/menu"
 
 // adding additional passport configuration
 PrivateRouteConfig(passport);
@@ -35,6 +36,7 @@ zomato.use("/auth",Auth)
 zomato.use("/food",Food)
 zomato.use("/restaurant",Restaurant)
 zomato.use("/User", User)
+zomato.use("/menu",Menu)
 
 
 const PORT=4000;

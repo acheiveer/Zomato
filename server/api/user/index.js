@@ -1,7 +1,7 @@
 import express, { json } from "express";
 import passport, { use } from "passport";
 
-import { UserModel } from "../../database/user";
+import { UserModel } from "../../database/allModels";
 
 const Router = express.Router();
 

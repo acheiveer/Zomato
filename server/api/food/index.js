@@ -1,5 +1,5 @@
 import express from "express"
-import { FoodModel } from "../../database/food";
+import { FoodModel } from "../../database/allModels";
 
 const Router = express.Router();
 /*
