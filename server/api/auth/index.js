@@ -1,5 +1,5 @@
 import express from "express"
-import { ValidationSignIn,ValidationSignIn, ValidationSignUp } from "../../validation/auth_validation";
+import { ValidationSignIn, ValidationSignUp } from "../../validation/auth_validation";
 import { UserModel } from "../../database/allModels"
 
 const Router = express.Router();

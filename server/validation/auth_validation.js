@@ -7,7 +7,7 @@ export const ValidationSignUp = (userData) => {
         password: joi.string()
         .pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')),
         address: joi.array().items(joi.object({detail: joi.string(), for: joi.string()})),
-        phoneNumber: joi.array().items(joi.number().min(10).max(10)),
+        phoneNumber: joi.array().items(joi.number().integer().min(1000000000).max(9999999999)),
     });
     return Schema.validateAsync(userData);
 };
