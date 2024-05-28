@@ -4,6 +4,13 @@ import { UserModel } from "../../database/user"
 
 const Router = express.Router();
 
+/**
+ * Route     /signup
+ * Des       Create new user
+ * Params    none
+ * Access    Public
+ * Method    POST
+ */
 Router.post("/signup",async (req,res)=>{
     try {
         const {credentials} = req.body;
@@ -19,6 +26,14 @@ Router.post("/signup",async (req,res)=>{
     }
 })
 
+
+/**
+ * Route     /signin
+ * Des       login to existing user
+ * Params    none
+ * Access    Public
+ * Method    POST
+ */
 Router.post("/signin",async (req,res)=>{
     try {
         const {credentials} = req.body;
