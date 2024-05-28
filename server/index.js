@@ -20,7 +20,7 @@ PrivateRouteConfig(passport);
 
 const zomato = express();
 zomato.use(express.json());
-zomato.use(session({secret: "ZomatoApp"}));
+zomato.use(session({secret: process.env.JWT_SECRET}));
 zomato.use(passport.initialize());
 zomato.use(passport.session());
 
