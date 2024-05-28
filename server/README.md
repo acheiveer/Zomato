@@ -63,3 +63,8 @@
 ### order api
 - Get all orders by user id
 - Add new order
+### restaurant api revised
+- get all restaurant details based on city
+- get individual restaurant details based on id
+### image api
+- npm i multer (uploading heavy data like image)
