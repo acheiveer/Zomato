@@ -1,4 +1,5 @@
 import express from "express"
+import { validateCategory, validateId } from "../../validation/common_validation";
 import { FoodModel } from "../../database/allModels";
 
 const Router = express.Router();
@@ -30,6 +31,7 @@ Router.post("/new",async (req,res)=>{
 Router.get("/:_id",async (req,res)=>{
     try {
         const {_id} = req.params;
+        await validateId(req.params)
         const foods = await FoodModel.findById(_id);
         return res.json({foods}) 
     } catch (error) {
@@ -46,6 +48,7 @@ Router.get("/:_id",async (req,res)=>{
 Router.get("/r/:_id",async (req,res)=>{
     try {
         const { _id } = req.params;
+        await validateId (req.params);
         const foods = await FoodModel.find({restaurant: _id})
         return res.json({foods}) 
     } catch (error) {
@@ -62,6 +65,7 @@ Router.get("/r/:_id",async (req,res)=>{
 Router.get("/c/:category",async (req,res)=>{
     try {
         const {category} = req.params;
+        await validateCategory(req.params)
         const foods = await FoodModel.find({  
             category :{ $regex:category, $options:"i"}   //{ category: { $regex: category, $options: "i" } }: This is the search criteria. It's using the MongoDB $regex operator for pattern matching with the category field of the documents. Additionally, the $options: "i" parameter ensures that the regular expression search is case-insensitive.
         });
