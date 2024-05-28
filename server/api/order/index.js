@@ -43,6 +43,10 @@ Router.put(
         try {
             const {user} = req;
             const {orderDetails} = req.body;
+
+            //Task: Validate orderDetails
+
+            
             const addNewOrder = await OrderModel.findOneAndUpdate(
                 {
                     user: user._id
