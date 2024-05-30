@@ -6,6 +6,7 @@ dotenv.config();
 
 //Private Route Authentication configuration
 import PrivateRouteConfig from "./config/route_config"
+import googleAuthConfig from "./config/google_config"
 
 //Databse Connection
 import ConnectDB from "./database/connection"
@@ -21,6 +22,7 @@ import Image from "./api/image"
 
 // adding additional passport configuration
 PrivateRouteConfig(passport);
+googleAuthConfig(passport);
 
 const zomato = express();
 zomato.use(express.json());
