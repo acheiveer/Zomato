@@ -64,6 +64,7 @@ Router.get("/:_id", async (req, res) => {
     }
   });
   
+  // Wrong Route(Please ReCheck)
   // Router.post("/", upload.array("file", 4), async (req, res) => {
   //   try {
   //     const file = req.files;
@@ -91,5 +92,37 @@ Router.get("/:_id", async (req, res) => {
   //     return res.status(500).json({ error: error.message });
   //   }
   // });
+
+
+  // For adding upto 4 files from a single key from-data
+//   Router.post("/", upload.array("file", 4), async (req, res) => {
+//     try {
+//       const files = req.files;
+//       const uploadPromises = files.map(file => {
+//         const bucketOptions = {
+//           Bucket: "prabhakar-zomato-clone",
+//           Key: file.originalname,
+//           Body: file.buffer,
+//           ContentType: file.mimetype,
+//           ACL: "public-read", // Access Control List
+//         };
+  
+//         return s3Upload(bucketOptions);
+//       });
+  
+//       const uploadResults = await Promise.all(uploadPromises);
+  
+//       const dbUpload = await ImageModel.create({
+//         images: uploadResults.map(uploadImage => ({
+//           location: uploadImage.Location,
+//         })),
+//       });
+  
+//       return res.status(200).json({ dbUpload });
+//     } catch (error) {
+//       return res.status(500).json({ error: error.message });
+//     }
+//   });
+  
   
   export default Router;
