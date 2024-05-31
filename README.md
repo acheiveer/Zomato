@@ -86,3 +86,6 @@
 ### build project (node js)
 - npm run build
 - setup everything
+### create react app
+- npx create-react-app client
+- config tailwind css
