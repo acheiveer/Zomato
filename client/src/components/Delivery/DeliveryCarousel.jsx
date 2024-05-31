@@ -4,7 +4,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 
-
 import DeliveryCategoryCard from "./DeliveryCategoryCard";
 
 const DeliveryCarousel = () => {
