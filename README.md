@@ -107,3 +107,13 @@
 - FoodTab ✔
 - home page => nested rotes (Delivery, Dining, NightLife, Nutrition)
 - Delivery ✔
+- Delivery Carousel ✔
+- Restaurant Card ✔
+- ### Dining ✔
+- Picture Carousel ✔
+- ### Night life ✔
+- Night life Carousel ✔
+- ### Nutrition ✔
+- Nutrition Hero Carousel ✔
+- Nutrition Carousel ✔
+- NutritionCard ✔
