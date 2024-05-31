@@ -66,5 +66,23 @@
 ### restaurant api revised
 - get all restaurant details based on city
 - get individual restaurant details based on id
+### setup validation
+- npm i joi
+- server => validation =>
+- auth_validation.js(sing up and sign in)
+- comman_validation.js
+### aws config
+- create s3 bucket for stoaring image
+- create IAM sub-accout 
+- npm i aws-sdk
 ### image api
 - npm i multer (uploading heavy data like image)
+- api -> image
+- server -> utils -> s3.js
+### google auth api
+- https://console.cloud.google.com (config)
+- npm install passport-google-oauth2
+- config => googe_config.js
+### build project (node js)
+- npm run build
+- setup everything
