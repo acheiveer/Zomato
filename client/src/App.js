@@ -24,8 +24,7 @@ function App() {
         {/* <Route path="/restaurant/:id" element={<RedirectRestaurant />} /> */}
         <Route path="/google/:token" element={<GoogleAuthPage />} />
         <Route
-         path="/restaurant/:id
-         " element={
+         path="/restaurant/:id" element={
           <RestaurantLayout>
             <RestaurantPage />
           </RestaurantLayout>   
