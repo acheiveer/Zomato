@@ -122,3 +122,14 @@
 - info button ✔
 - restaurant info ✔
 - tabs ✔
+- ### Restaurant Overview ✔
+- npm i react-simple-image-viewer
+- npm i dayjs
+- Menu Collection ✔
+- Menu Similar Restaurant Card ✔
+- Review Card ✔
+- MapView ✔
+- Menu ✔
+- Order Online ✔
+- Add Review ✔
+- Photo Collection
