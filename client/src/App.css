@@ -47,3 +47,9 @@
 #ReactSimpleImageViewer {
   z-index: 100;
 }
+
+::-webkit-scrollbar {
+
+  display: none;
+
+}
